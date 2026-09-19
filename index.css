@@ -1,0 +1,63 @@
+body {
+  height: 70vh;
+  background-color: #f0f9ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#text-highlight {
+  color: #0284c7;
+}
+
+h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h3 {
+  color: #4b5563;
+  font-weight: lighter;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.slidecontainer {
+  width: 100px;
+}
+
+button {
+  justify-items: right;
+  width: 200px;
+  background-color: #075985;
+  color: white;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+.passwords {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 10% 0 0;
+}
+
+.passwordField {
+  width: 300px;
+  height: 30px;
+  background-color: #0c4a6e;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+
+hr {
+  color: black;
+  text-align: center;
+  width: 80%;
+  height: 1px;
+}
