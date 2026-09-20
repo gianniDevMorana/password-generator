@@ -27,6 +27,15 @@ h3 {
 
 .slidecontainer {
   width: 100px;
+  display: flex;
+}
+
+#customOptions {
+  margin-left: 10px;
+  background-color: #0c4a6e;
+  color: white;
+  padding: 5px 5px 5px 5px;
+  border-radius: 8px;
 }
 
 button {

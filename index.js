@@ -91,6 +91,10 @@ const characters = [
   "?",
   "/",
 ];
+const lettersAndNumbers = characters.slice(0, characters.indexOf("9"));
+const lettersOnly = characters.slice(0, characters.indexOf("z"));
+const numbersOnly = characters.slice(characters.indexOf("0"), characters.indexOf("9"));
+
 const PASSWORD_LENGTH_PREFIX = "Password length: ";
 
 let password = document.getElementById("password");
@@ -107,15 +111,27 @@ document.getElementById("generate").addEventListener("click", function () {
   generatePassword(slider.value);
 });
 
-function getRandomCharacter() {
-  let randomChar = Math.floor(Math.random() * characters.length);
-  return characters[randomChar];
+function getRandomCharacter(charArray) {
+  let randomChar = Math.floor(Math.random() * charArray.length);
+  return charArray[randomChar];
 }
 
 function generatePassword(passwordLength) {
+  const options = document.getElementById("customOptions").value;
   let randomPassword = "";
+
+  let selectedArray = characters;
+
+  if (options === "lettersNumbers") {
+    selectedArray = lettersAndNumbers;
+  } else if (options === "lettersOnly") {
+   selectedArray = lettersOnly;
+  } else if (options === "numbersOnly") {
+    selectedArray = numbersOnly; 
+  }
+
   for (let i = 0; i < passwordLength; i++) {
-    randomPassword += getRandomCharacter();
+    randomPassword += getRandomCharacter(selectedArray);
   }
 
   password.textContent = randomPassword;
