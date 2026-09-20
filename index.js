@@ -122,3 +122,9 @@ function generatePassword(passwordLength) {
 
   return randomPassword;
 }
+
+password.addEventListener("click", function() {
+    navigator.clipboard.writeText(password.textContent);
+    alert("Copied!");
+    console.log("Clicked");
+})
