@@ -91,9 +91,9 @@ const characters = [
   "?",
   "/",
 ];
-const lettersAndNumbers = characters.slice(0, characters.indexOf("9"));
-const lettersOnly = characters.slice(0, characters.indexOf("z"));
-const numbersOnly = characters.slice(characters.indexOf("0"), characters.indexOf("9"));
+const lettersAndNumbers = characters.slice(0, characters.indexOf("9") + 1);
+const lettersOnly = characters.slice(0, characters.indexOf("z") + 1);
+const numbersOnly = characters.slice(characters.indexOf("0"), characters.indexOf("9") + 1);
 
 const PASSWORD_LENGTH_PREFIX = "Password length: ";
 
@@ -140,7 +140,12 @@ function generatePassword(passwordLength) {
 }
 
 password.addEventListener("click", function() {
+  if (!password.textContent) return;
+
     navigator.clipboard.writeText(password.textContent);
-    alert("Copied!");
-    console.log("Clicked");
+    const popupText = document.getElementById("popup");
+    popupText.classList.add("show");
+    setTimeout(function() {
+      popupText.classList.remove("show");
+    }, 2000);
 })
